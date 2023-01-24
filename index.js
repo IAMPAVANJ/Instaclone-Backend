@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Post = require('./models/posts')
 const path = require("path")
+const port = 8080 || process.env.PORT
 const cors = require("cors")
 const fileUpload = require("express-fileupload")
 const url = `mongodb+srv://pavan1010:pavan1010@cluster0.2ky9pgd.mongodb.net/?retryWrites=true&w=majority`
@@ -88,13 +89,6 @@ app.get('/delete',async (req,res)=>{
   }
 })
 
-
-
-
-
-
-
-
-app.listen(3008,()=>{
-  console.log("server is up and running at port 3008")
+app.listen(port,()=>{
+  console.log(`server is up and running at port ${port}`)
 })
